@@ -1,17 +1,17 @@
 # Google Docs Clone
 
-Um clone do Google Docs construído com React, TypeScript e Firebase, oferecendo funcionalidades de edição de texto em tempo real e colaboração.
+A Google Docs clone built with React, TypeScript, and Firebase, offering real-time text editing and collaboration features.
 
-## 🚀 Funcionalidades
+## 🚀 Features
 
-- ✍️ Editor de texto rico com formatação
-- 🔄 Sincronização em tempo real
-- 💾 Salvamento automático
-- 📱 Design responsivo
-- 👥 Suporte para múltiplos usuários
-- 🎨 Interface similar ao Google Docs
+- ✍️ Rich text editor with formatting
+- 🔄 Real-time synchronization
+- 💾 Automatic saving
+- 📱 Responsive design
+- 👥 Multi-user support
+- 🎨 Google Docs-like interface
 
-## 🛠️ Tecnologias Utilizadas
+## 🛠️ Technologies Used
 
 - React
 - TypeScript
@@ -19,55 +19,55 @@ Um clone do Google Docs construído com React, TypeScript e Firebase, oferecendo
 - React Quill
 - Lodash
 
-## 📋 Pré-requisitos
+## 📋 Prerequisites
 
-- Node.js (versão 14 ou superior)
-- NPM ou Yarn
-- Conta no Firebase
+- Node.js (version 14 or higher)
+- NPM or Yarn
+- Firebase Account
 
-## 🔧 Instalação
+## 🔧 Installation
 
-1. Clone o repositório:
+1. Clone the repository:
 
 ```bash
-git clone [url-do-seu-repositorio]
+git clone [your-repository-url]
 cd docs-clone
 ```
 
-2. Instale as dependências:
+2. Install dependencies:
 
 ```bash
 npm install
 ```
 
-3. Configure as variáveis de ambiente:
-   - Crie um arquivo `.env` na raiz do projeto
-   - Adicione suas configurações do Firebase:
+3. Set up environment variables:
+   - Create a `.env` file in the project root
+   - Add your Firebase configuration:
 
 ```env
-REACT_APP_FIREBASE_API_KEY=seu-api-key
-REACT_APP_FIREBASE_AUTH_DOMAIN=seu-auth-domain
-REACT_APP_FIREBASE_PROJECT_ID=seu-project-id
-REACT_APP_FIREBASE_STORAGE_BUCKET=seu-storage-bucket
-REACT_APP_FIREBASE_MESSAGING_SENDER_ID=seu-messaging-sender-id
-REACT_APP_FIREBASE_APP_ID=seu-app-id
+REACT_APP_FIREBASE_API_KEY=your-api-key
+REACT_APP_FIREBASE_AUTH_DOMAIN=your-auth-domain
+REACT_APP_FIREBASE_PROJECT_ID=your-project-id
+REACT_APP_FIREBASE_STORAGE_BUCKET=your-storage-bucket
+REACT_APP_FIREBASE_MESSAGING_SENDER_ID=your-messaging-sender-id
+REACT_APP_FIREBASE_APP_ID=your-app-id
 ```
 
-4. Inicie o servidor de desenvolvimento:
+4. Start the development server:
 
 ```bash
 npm run dev
 ```
 
-## 🌟 Características do Editor
+## 🌟 Editor Features
 
-- Barra de ferramentas completa para formatação
-- Suporte para diferentes estilos de texto
-- Auto-save com throttling para otimização
-- Sincronização em tempo real entre múltiplos usuários
-- Interface responsiva para diferentes tamanhos de tela
+- Complete formatting toolbar
+- Support for different text styles
+- Auto-save with throttling optimization
+- Real-time synchronization between multiple users
+- Responsive interface for different screen sizes
 
-## 🔍 Estrutura do Projeto
+## 🔍 Project Structure
 
 ```
 docs-clone/
@@ -82,32 +82,32 @@ docs-clone/
 └── package.json
 ```
 
-## 📱 Responsividade
+## 📱 Responsiveness
 
-O editor é totalmente responsivo e se adapta a diferentes tamanhos de tela:
+The editor is fully responsive and adapts to different screen sizes:
 
-- Desktop: Layout otimizado com 85vh de altura
-- Tablet: Layout ajustado com 87vh de altura
-- Mobile: Layout maximizado com 90vh de altura
+- Desktop: Optimized layout with 85vh height
+- Tablet: Adjusted layout with 87vh height
+- Mobile: Maximized layout with 90vh height
 
-## 🤝 Contribuindo
+## 🤝 Contributing
 
-Contribuições são sempre bem-vindas! Sinta-se à vontade para:
+Contributions are always welcome! Feel free to:
 
-1. Fazer um fork do projeto
-2. Criar uma branch para sua feature (`git checkout -b feature/AmazingFeature`)
-3. Commit suas mudanças (`git commit -m 'Add some AmazingFeature'`)
-4. Push para a branch (`git push origin feature/AmazingFeature`)
-5. Abrir um Pull Request
+1. Fork the project
+2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-## 📝 Licença
+## 📝 License
 
-Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+This project is under the MIT license. See the [LICENSE](LICENSE) file for more details.
 
-## ✨ Próximos Passos
+## ✨ Next Steps
 
-- [ ] Adicionar autenticação de usuários
-- [ ] Implementar compartilhamento de documentos
-- [ ] Adicionar histórico de versões
-- [ ] Implementar comentários
-- [ ] Adicionar suporte para múltiplos documentos
+- [ ] Add user authentication
+- [ ] Implement document sharing
+- [ ] Add version history
+- [ ] Implement comments
+- [ ] Add support for multiple documents
