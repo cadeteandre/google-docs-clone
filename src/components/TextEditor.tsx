@@ -3,6 +3,7 @@ import ReactQuill from "react-quill";
 import { setDoc, doc, getDoc, onSnapshot } from 'firebase/firestore';
 import { db } from "../firebase-config";
 import 'react-quill/dist/quill.snow.css';
+import './TextEditor.css';
 import { throttle } from "lodash";
 
 const TextEditor = () => {

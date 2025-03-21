@@ -1,54 +1,113 @@
-# React + TypeScript + Vite
+# Google Docs Clone
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Um clone do Google Docs construído com React, TypeScript e Firebase, oferecendo funcionalidades de edição de texto em tempo real e colaboração.
 
-Currently, two official plugins are available:
+## 🚀 Funcionalidades
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- ✍️ Editor de texto rico com formatação
+- 🔄 Sincronização em tempo real
+- 💾 Salvamento automático
+- 📱 Design responsivo
+- 👥 Suporte para múltiplos usuários
+- 🎨 Interface similar ao Google Docs
 
-## Expanding the ESLint configuration
+## 🛠️ Tecnologias Utilizadas
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- React
+- TypeScript
+- Firebase (Firestore)
+- React Quill
+- Lodash
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## 📋 Pré-requisitos
+
+- Node.js (versão 14 ou superior)
+- NPM ou Yarn
+- Conta no Firebase
+
+## 🔧 Instalação
+
+1. Clone o repositório:
+
+```bash
+git clone [url-do-seu-repositorio]
+cd docs-clone
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+2. Instale as dependências:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+```bash
+npm install
 ```
+
+3. Configure as variáveis de ambiente:
+   - Crie um arquivo `.env` na raiz do projeto
+   - Adicione suas configurações do Firebase:
+
+```env
+REACT_APP_FIREBASE_API_KEY=seu-api-key
+REACT_APP_FIREBASE_AUTH_DOMAIN=seu-auth-domain
+REACT_APP_FIREBASE_PROJECT_ID=seu-project-id
+REACT_APP_FIREBASE_STORAGE_BUCKET=seu-storage-bucket
+REACT_APP_FIREBASE_MESSAGING_SENDER_ID=seu-messaging-sender-id
+REACT_APP_FIREBASE_APP_ID=seu-app-id
+```
+
+4. Inicie o servidor de desenvolvimento:
+
+```bash
+npm run dev
+```
+
+## 🌟 Características do Editor
+
+- Barra de ferramentas completa para formatação
+- Suporte para diferentes estilos de texto
+- Auto-save com throttling para otimização
+- Sincronização em tempo real entre múltiplos usuários
+- Interface responsiva para diferentes tamanhos de tela
+
+## 🔍 Estrutura do Projeto
+
+```
+docs-clone/
+├── src/
+│   ├── components/
+│   │   ├── TextEditor.tsx
+│   │   └── TextEditor.css
+│   ├── firebase-config.ts
+│   ├── App.tsx
+│   └── App.css
+├── public/
+└── package.json
+```
+
+## 📱 Responsividade
+
+O editor é totalmente responsivo e se adapta a diferentes tamanhos de tela:
+
+- Desktop: Layout otimizado com 85vh de altura
+- Tablet: Layout ajustado com 87vh de altura
+- Mobile: Layout maximizado com 90vh de altura
+
+## 🤝 Contribuindo
+
+Contribuições são sempre bem-vindas! Sinta-se à vontade para:
+
+1. Fazer um fork do projeto
+2. Criar uma branch para sua feature (`git checkout -b feature/AmazingFeature`)
+3. Commit suas mudanças (`git commit -m 'Add some AmazingFeature'`)
+4. Push para a branch (`git push origin feature/AmazingFeature`)
+5. Abrir um Pull Request
+
+## 📝 Licença
+
+Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+
+## ✨ Próximos Passos
+
+- [ ] Adicionar autenticação de usuários
+- [ ] Implementar compartilhamento de documentos
+- [ ] Adicionar histórico de versões
+- [ ] Implementar comentários
+- [ ] Adicionar suporte para múltiplos documentos
