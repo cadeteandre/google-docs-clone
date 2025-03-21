@@ -1,8 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 import ReactQuill from "react-quill";
-import { setDoc, doc, getDoc } from 'firebase/firestore';
+import { setDoc, doc, getDoc, onSnapshot } from 'firebase/firestore';
 import { db } from "../firebase-config";
 import 'react-quill/dist/quill.snow.css';
+import { throttle } from "lodash";
 
 const TextEditor = () => {
 
@@ -12,7 +13,7 @@ const TextEditor = () => {
     const isLocalChange = useRef(false);
 
     const documentRef = doc(db, "documents", "sample-doc");
-    const saveContent = () => {
+    const saveContent = throttle(() => {
         if(quillRef.current && isLocalChange.current) {
             const content = quillRef.current.getEditor().getContents();
             console.log('saving content to db: ', content);
@@ -22,7 +23,7 @@ const TextEditor = () => {
             .catch(console.error);
             isLocalChange.current = false;
         }
-    }
+    }, 1000);
 
     useEffect(() => {
         if(quillRef.current) {
@@ -41,7 +42,21 @@ const TextEditor = () => {
             .catch(console.error);
             //Listen to Firestore for any updates und update locally in real-time
 
+            const unsubscribe = onSnapshot(documentRef, (snapshot) => {
+                if(snapshot.exists()) {
+                    const newContent = snapshot.data().content;
+                    if(!isEditing && quillRef.current) {
+                        const editor = quillRef.current.getEditor();
+                        const currentCursorPosition = editor.getSelection()?.index || 0;
+                        
+                        editor.setContents(newContent, "silent");
+                        editor.setSelection(currentCursorPosition);
+                    }
+                }
+            });
+
             //Listen for Local text changes and save it to Firestore
+            
             const editor = quillRef.current.getEditor();
             editor.on("text-change", (delta: unknown, oldContents: unknown, source: string) => {
                 if(source === "user") {
@@ -53,6 +68,10 @@ const TextEditor = () => {
                 }
             });
 
+            return () => {
+                unsubscribe();
+                editor.off("text-change");
+            }
         }
     }, [])
 
